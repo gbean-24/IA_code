@@ -1,0 +1,32 @@
+{% extends "meandbase.html" %}
+{% block title %}Forum Page{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="col-12 text-center">
+        <h2>아직 쇼핑 기록이 없으신 회원이시네요! 간단한 정보를 공유해주세요.</h2>
+    </div>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class = 'border-bottom mb-4'>어떤 종류의 상품을 찾고 계신가요?</legend>
+                <div class="form-check">
+                    {% for value, label in form.choices.choices %}
+                    <input class="form-check-input" type="radio" name="choices" id="{{ value }}" value="{{ value }}" {% if checked %}checked{% endif %}>
+                    <label class="form-check-label" for="{{ value }}">
+                        {{ label }}
+                    </label>
+                    <br>
+                    {% endfor %}
+                </div>
+        </fieldset>
+        <div class="form_group mt-3">
+            {{ form.submit(class="btn btn-outline-info", value="추천") }}
+        </div>
+    </form>
+</div>
+{% endblock content%}
+
+<!-- https://chat.openai.com/share/42a78a24-1952-4261-b3ec-85d5a92a69bf -->

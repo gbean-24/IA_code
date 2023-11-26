@@ -1,0 +1,61 @@
+{% extends "meandbase.html" %}
+{% block title %}Forum Page{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="col-12 text-center">
+        <h2>본인확인</h2>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" class="img-fluid" alt="...">
+        </div>
+        <form class="col-9" method="POST" href="{{ url_for('static', filename='meandresults.html') }}">
+            {{ form.hidden_tag() }}
+            <legend class = 'border-bottom mb-4'>미앤드 가입 시 사용했던 이름과 이메일을 적어주세요!</legend>
+            <fieldset class="form-group">
+                <div class="'form-group", value="이름">
+                    {{ form.name.label(class="form-control-label", value="이름") }}
+                    {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-lg is-invalid", value="이름") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="'form-group", value="이메일">
+                    {{ form.email.label(class="form-control-label", value="이메일") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid", value="이메일") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+
+            <div class="form_group mt-3" style="text-align:center;">
+                {{ form.submit(class="btn btn-lg btn-outline-info", value="상품 추천!", style="width:200px;") }}
+            </div>
+        </form>
+    </div>
+    <div class="border-top mt-3">
+        <small class="text-muted ml-5">
+            미앤드 계정이 없으시다면 공식 홈페이지에서 회원가입을 해주세요! <a class="ml-2" href="https://meand.co.kr/" target="_blank">미앤드 공식 홈페이지</a>
+        </small>
+    </div>
+</div>
+    
+
+
+
+{% endblock content%}

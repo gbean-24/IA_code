@@ -1,0 +1,50 @@
+{% extends "meandbase.html" %}
+{% block title %}Index Page{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5 justify-content-center">
+    <div style="width:100%; text-align:center;">
+        <h1>안녕하세요, 미앤드 회원님!</h1>
+        <p style='text-align:justify; font-size:20px; display:inline-block;'>
+            이 웹사이트는 어떤 고등학생이 코딩 프로젝트로 만든 미앤드 추천시스템이랍니다. <br>
+            미앤드에서는 다양한 카테고리의 아이템을 팔지만, 기본적으로는 청소년 맞춤 속옷을 파는 웹사이트인데요, <br>
+            미앤드에서는 독창적인 카테고리로 청소년 속옷을 제작하고 분류하기 때문에 <br>
+            미앤드의 상품을 탐색하는 데 어려움을 겪는 회원님들을 위한 간단한 추천 시스템입니다. <br>
+            기존 상품 구매 이력이 있으신 분들은 구매 이력을 바탕으로 상품이 추천 되고, <br>
+            상품 구매 이력이 없으신 분들은 찾고 계신 상품을 선택해주시면 관련 상품이 추천됩니다. <br>
+            아래 버튼을 누르시면 간단한 본인확인 절차 이후 상품이 추천됩니다!
+        </p>
+    </div>
+    <div class="border-top border-bottom p-3 m-3 justify-content-center">
+        <a class="btn btn-lg btn-outline-dark mx-auto" href="{{ url_for('form') }}" role="button" style="display:block; width:300px; margin:0 auto;">상품 추천 시작!</a>
+    </div>
+    <div class="container border p-3">
+        <div class="row mt-3 mb-3">
+            <h2 style="text-align:center;">2차 성징 단계로 이해하는 미앤드 청소년 속옷</h2>
+            <img src="https://cdn.imweb.me/upload/S20210223bb315572cef3c/50399f942e367.jpg" class="rounded mx-auto d-block"> <br>
+            <div class='col-6'>
+                <img src="https://cdn.imweb.me/upload/S20210223bb315572cef3c/67acea3a7ba79.png" class="img-fluid rounded">
+            </div>
+            <div class='col-6'>
+                <img src="https://cdn.imweb.me/upload/S20210223bb315572cef3c/db80d65175bc9.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 justify-content-center">
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

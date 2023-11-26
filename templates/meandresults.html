@@ -1,0 +1,194 @@
+{% extends "meandbase.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="col-12 text-center">
+        <h2> {{ name }} 회원님의 구매 정보를 기반한 상품 추천</h2>
+        <div class="row mt-5 mb-5">
+            {% if predict_item_1_name != None %}
+            <div class="col-md-4">
+                <div class="card" style="width: auto;">
+                    <img src="https://cdn.imweb.me/upload/{{ predict_item_1_img }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{predict_item_1_name}}</h5>
+                        <p class="card-text">{{ predict_item_1_des }}</p>
+                        <h6 class="card-text">₩{{ predict_item_1_price }}</h6>
+                        <a href="{{ predict_item_1_url }}" target = '_blank' class="btn btn-outline-info">아이템 쇼핑하기</a>
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+
+            {% if predict_item_2_name != None %}
+            <div class="col-md-4">
+                <div class="card" style="width: auto;">
+                    <img src="https://cdn.imweb.me/upload/{{ predict_item_2_img }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{predict_item_2_name}}</h5>
+                        <p class="card-text">{{ predict_item_2_des }}</p>
+                        <h6 class="card-text">₩{{ predict_item_2_price }}</h6>
+                        <a href="{{ predict_item_2_url }}" target = '_blank' class="btn btn-outline-info">아이템 쇼핑하기</a>
+                    </div>
+                </div>
+            </div>
+            {%endif%} 
+
+            {% if predict_item_3_name != None %}
+            <div class="col-md-4">
+                <div class="card" style="width: auto;">
+                    <img src="https://cdn.imweb.me/upload/{{ predict_item_3_img }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{predict_item_3_name}}</h5>
+                        <p class="card-text">{{ predict_item_3_des }}</p>
+                        <h6 class="card-text">₩{{ predict_item_3_price }}</h6>
+                        <a href="{{ predict_item_3_url }}" target = '_blank' class="btn btn-outline-info">아이템 쇼핑하기</a>
+                    </div>
+                </div>
+            </div>
+            {%endif%} 
+        </div>
+
+        <h2 class="border-top pt-3 mb-5"> {{ name }}님, 해당 상품 재구매는 어떠세요?</h2>
+        <div class="row justify-content-center">
+            {% if previous_item_1_name != None %}
+            <div class="col-md-4">
+                <div class="card" style="width: auto;">
+                    <img src="https://cdn.imweb.me/upload/{{ previous_item_1_img }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{previous_item_1_name}}</h5>
+                        <p class="card-text">{{ previous_item_1_des }}</p>
+                        <h6 class="card-text">₩{{ previous_item_1_price }}</h6>
+                        <a href="{{ previous_item_1_url }}" target = '_blank' class="btn btn-outline-info">아이템 쇼핑하기</a>
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+        </div>
+
+        <h2 class="mt-5">추천 제품에 대한 간단설명</h2>
+        <div class="row">
+            <div class="accordion mt-5 pb-5" id="accordionExample">
+                {% if predict_item_1_category == '14' or predict_item_2_category == '14' or predict_item_3_category == '14'%}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                        처음브라/처음런닝/처음팬티에 대한 설명
+                        </button>
+                    </h2>
+                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p class="text-start">
+                                <strong>권장연령: 2차 성징이 시작되는 만 9세 이상 아이들</strong><br>
+                                성장단계: 몽우리가 생길때부터 AA컵까지 <br>
+                                초기 성장과정은 이렇게 진행돼요: <br>
+                                - 유두 주변에 몽우리가 생기며 아픈 시기 <br>
+                                - 유두를 중심으로 가슴이 부풀어오르는 시기 (AAA컵) <br>
+                                - 유방의 형태가 점차 갖추어지는 시기 (AA컵)<br>
+                                <br>
+                                고무밴드 없고 압박 없는 편안한 디자인 <br>
+                                <br>
+                                브라 패드 (2가지): 탈부착이 가능하여 성장 과정에 따라 바꿔 입을 수 있어요. <br>
+                                땅콩 패드: 평평한 패드, 몽우리가 생기기 시작할때 <br>
+                                물방울 패드: 둥근 패드, 볼륨이 생기기 시작할 때 <br>
+                                <br>
+                                추천 속옷 사이즈 (키/몸무게/엉덩이 둘레) <br>
+                                - S: 135~150cm/35~45kg/80~88cm <br>
+                                - M: 148~158cm/46~58kg/89~95cm <br>
+                                - L: 158~168cm/55kg 이상/96~103cm <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if predict_item_1_category == '15' or predict_item_2_category == '15' or predict_item_3_category == '15'%}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading15">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                        앤드브라에 대한 설명
+                        </button>
+                    </h2>
+                    <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p class="text-start">
+                                <strong>권장연령: 성장기부터 성인까지 자유롭게 사용 가능</strong> <br>
+                                성장단계: AA컵 이후 <br>
+                                후기 성장과정은 이렇게 진행돼요: <br>
+                                - 유방 형태가 잡히고 점차 커지는 시기 (A컵) <br>
+                                - 성인 유방 형태로 완성되는 시기 (A, B컵 이상) <br>
+                                <br>
+                                고무밴드 없고 압박 없는 편안한 디자인 <br>
+                                성장기, 호르몬 변화, 임신중에도 속옷에 신경쓰지 않고 입을 수 있어요. <br>
+                                <br>
+                                브라 패드 (2가지): 탈부착이 가능하여 성장 과정에 따라 바꿔 입을 수 있어요. <br>
+                                땅콩 패드: 평평한 패드, 몽우리가 생기기 시작할때 <br>
+                                물방울 패드: 둥근 패드, 볼륨이 생기기 시작할 때 <br>
+                                <br>
+                                추천 속옷 사이즈 (키/몸무게/엉덩이 둘레) <br>
+                                - S: 135~150cm/35~45kg/80~88cm <br>
+                                - M: 148~158cm/46~58kg/89~95cm <br>
+                                - L: 158~168cm/55kg 이상/96~103cm <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if predict_item_1_category == '13' or predict_item_2_category == '13' or predict_item_3_category == '13'%}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                        홈웨어 상품에 대한 설명
+                        </button>
+                    </h2>
+                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p class="text-start">
+                                <strong>편안하게 입을 수 있는 원단과 디자인을 포함한 상품들입니다.</strong> <br>
+                                <br>
+                                스트라이프 파자마: 면 100% 소재 <br>
+                                추천 사이즈 <br>
+                                - M: 153cm이상/84~95cm/88~98cm <br>
+                                - L: 158cm이상/96cm이상/98cm~107cm <br>
+                                테리 로브 파자마: 패드가 내장된 이너탑이 포함! <br>
+                                추천 사이즈 <br>
+                                - M: 153cm이상/87~98cm/88~98cm <br>
+                                - L: 158cm이상/99cm이상/98cm~107cm <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if predict_item_1_category == '11' or predict_item_2_category == '11' or predict_item_3_category == '11'%}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                        에코 라이프 상품에 대한 설명
+                        </button>
+                    </h2>
+                    <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p class="text-start">
+                                에코 라이프 카테고리의 많은 제품은 자투리 재료를 재활용하여 만들어요! <br>
+                                <br>
+                                거즈 블랭킷 <br>
+                                - 면 100% 소재 <br>
+                                - 3/4중 거즈로 빠른 흡수력과 건조 <br>
+                                - 스몰 사이즈: 물놀이 타월, 캠핑 블랭킷, 어린이 이불로 사용 가능 <br>
+                                - 라지 사이즈: 싱글 이불 및 간이 이불로 사용 가능 <br>
+                                거즈 와입스 (손수건) <br>
+                                - 2/3중 거즈로 빠른 흡수력과 건조 <br>
+                                - 색상은 랜덤! 작업 중 남은 자투리 원단을 재활용 하여 만든 제품 <br>
+                                일러스트 손수건 <br>
+                                - 2중 거즈로 빠른 흡수력과 건조 <br>
+                                - 손수건, 거을겨울 목스카프, 도시락 보자기, 키친 크로스, 1인 돗자리 <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div> 
+        </div>
+    </div>
+</div>
+{% endblock content %}
